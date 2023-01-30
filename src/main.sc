@@ -8,6 +8,13 @@ theme: /
     state: Welcome
         q!: *start
         q!: $hi *
+        script:
+            $response.replies = $response.replies || [];
+            $response.replies.push({
+                type: "image",
+                imageUrl: "https://proprikol.ru/wp-content/uploads/2020/12/samolety-krasivye-kartinki-41.jpg",
+                text: "Самолёт"
+                });
         random:
             a: Добрый день!
             a: Здравствуйте!
