@@ -11,5 +11,6 @@ theme: /Discount
                 $reactions.answer(answerText);
                 $reactions.answer(discount);
             }
+        go!: /City/Departure
             
             

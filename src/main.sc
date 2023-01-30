@@ -1,14 +1,27 @@
 require: slotfilling/slotFilling.sc
   module = sys.zb-common
+require: city/cities-ru.csv
+    module = sys.zb-common
+    name = Cities
+    var = Cities
 require: patterns.sc
 require: topics/service.sc
 require: topics/phone.sc
 require: topics/discount.sc
+require: topics/city.sc
 
 require: dicts/discount.yaml
     var = discountInfo
 
 init:
+
+    $global.$converters = {};
+    
+    $global.$converters.CityConverter = function CityConverter(parseTree) {
+        var id = parseTree.Cities[0].value;
+        return Cities[id].value;
+        };
+
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
         log("@@@@" + toPrettyString($context.session));
