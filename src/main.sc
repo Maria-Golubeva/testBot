@@ -2,7 +2,19 @@ require: slotfilling/slotFilling.sc
   module = sys.zb-common
 require: patterns.sc
 require: topics/service.sc
-  
+require: topics/phone.sc
+require: topics/discount.sc
+
+require: dicts/discount.yaml
+    var = discountInfo
+
+init:
+    bind("postProcess", function($context) {
+        $context.session.lastState = $context.currentState;
+        log("@@@@" + toPrettyString($context.session));
+        });
+
+
 theme: /
 
     state: Welcome
@@ -19,11 +31,13 @@ theme: /
             a: Добрый день!
             a: Здравствуйте!
             a: Приветствую!
+        a: Меня зовут {{ capitalize($injector.botName) }}.
         go!: /Service/SuggestHelp
         
-    state: NoMatch
+    state: NoMatch || noContext = true
         event!: noMatch
         a: Простите, я не понял. Переформулируйте, пожалуйста, запрос.
+        go!: {{ $context.session.lastState }}
 
     state: Match
         event!: match
