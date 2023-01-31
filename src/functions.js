@@ -10,6 +10,7 @@ function getCurrentWeather(lat, lon) {
         lang: "ru"
     }
     });
+    log(toPrettyString(response));
     if (!response.isOk || !response.data) {
         return false;
     }

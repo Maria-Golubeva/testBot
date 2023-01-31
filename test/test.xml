@@ -1,8 +1,84 @@
 <test>
     
+    <mockData>
+        <query>https://api.openweathermap.org/data/2.5/weather?lat=${lat}&amp;lon=${lon}&amp;appid=${API_key}&amp;units=${units}&amp;lang=${lang}</query>
+        <parameters>
+            <lat>56.8519</lat>
+            <lon>60.6122</lon>
+            <API_key>fc636e422739d41e8af83cec5c3d4431</API_key>
+            <units>metric</units>
+            <lang>ru</lang>
+        </parameters>
+        <response>{
+        "weather": [
+              {
+                "id": 801,
+                "main": "Clouds",
+                "description": "небольшая облачность",
+                "icon": "02d"
+              }
+            ],
+        "main": {
+              "temp": -2.19,
+              "feels_like": -8.23,
+              "temp_min": -2.35,
+              "temp_max": -2.19,
+              "pressure": 1014,
+              "humidity": 69
+            }
+        }</response>
+    </mockData>
+    
     <test-case id='TestForTexts'>
+        <dateTime>2023-01-28 13:00:00</dateTime>
         <q>/start</q>
-        <a>Добрый день!ь!</a>
+        <a>Добрый день!</a>
+        <a>Меня зовут Валерия.</a>
+        <a>Давайте я помогу вам купить билет?</a>
+        <q>Да</q>
+        <a>Отлично!</a>
+        <a>Для продолжения введите свой номер телефона в формате 79000000000.</a>
+        <q>79880009999</q>
+        <a>Ваш номер 79880009999, верно?</a>
+        <q>Верно</q>
+        <a>Хорошо.</a>
+        <a>Хочу отметить, что вам крупно повезло! Сегодня (28.01) действует акция!</a>
+        <a>Купите билет сегодня и получите скидку в 10% на следующую покупку!</a>
+        <a>Назовите, пожалуйста, город отправления.</a>
+        <q>Москва</q>
+        <a>Итак, город отправления: Москва.</a>
+        <a>Назовите, пожалуйста, город прибытия.</a>
+        <q>Екатеринбург</q>
+        <a>Итак, город прибытия: Екатеринбург.</a>
+        <a>В городе Екатеринбург сейчас небольшая облачность, -2.19°C.</a>
+    </test-case>
+    
+    <test-case id='TestForButtons'>
+        <q>/start</q>
+        <responseData>{
+            "replies": [
+            {"type": "image", "imageUrl": "https://proprikol.ru/wp-content/uploads/2020/12/samolety-krasivye-kartinki-41.jpg", "text": "Самолёт"},
+            {"type": "text", "text": "Добрый день!", "state": "/Welcome"},
+            {"type": "text", "text": "Меня зовут Валерия.", "state": "/Welcome"},
+            {"type": "text", "text": "Давайте я помогу вам купить билет?", "state": "/Service/SuggestHelp"},
+            {"type": "buttons", "buttons": [{"text": "Да"}, {"text": "Нет"}], "state": "/Service/SuggestHelp"}
+            ]
+        }</responseData>
+        <a>Добрый день!</a>
+        <a>Меня зовут Валерия.</a>
+        <a>Давайте я помогу вам купить билет?</a>
+    </test-case>
+    
+    <test-case id='TestForStates'>
+        <q>/start</q>
+        <a state="/Welcome" />
+        <a state="/Welcome" />
+        <a state="/Service/SuggestHelp" />
+        <q>Да</q>
+        <a state="/Service/SuggestHelp/Accepted" />
+        <a state="/Phone/Ask" />
+        <q>79880009999</q>
+        <a state="/Phone/Confirm" />
     </test-case>
     
 </test>    
