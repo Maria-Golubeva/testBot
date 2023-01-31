@@ -19,3 +19,4 @@ nlp:
     
 injector:
     botName: валерия
+    weatherApiKey: fc636e422739d41e8af83cec5c3d4431 

@@ -32,7 +32,7 @@
     }, {
       "text" : "купить билет @destination @departure на @date"
     }, {
-      "text" : "купить билет @Destination @Departure"
+      "text" : "купить билет @destination @departure"
     }, {
       "text" : "хочу купить билет @destination @departure"
     } ],

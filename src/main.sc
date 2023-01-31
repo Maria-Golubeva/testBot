@@ -4,11 +4,13 @@ require: city/cities-ru.csv
     module = sys.zb-common
     name = Cities
     var = Cities
+require: functions.js
 require: patterns.sc
 require: topics/service.sc
 require: topics/phone.sc
 require: topics/discount.sc
 require: topics/city.sc
+require: topics/weather.sc
 
 require: dicts/discount.yaml
     var = discountInfo

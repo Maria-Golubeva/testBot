@@ -3,7 +3,11 @@ theme: /City
     state: TicketPurchase
         intent!: /TicketPurchase
         script:
-            $reactions.answer(toPrettyString($parseTree));
+            $session.departureCity = capitalize($nlp.inflect($parseTree._departure, "gent"));
+            $session.arrivalCity = capitalize($nlp.inflect($parseTree._destination, "accs"));
+            $session.date = $parseTree._date.day + '/' + $parseTree._date.month + '/' + $parseTree._date.year;
+            # $reactions.answer(toPrettyString($parseTree));
+        a: {{ $session.date }} отправляемся из {{ $session.departureCity }} в {{ $session.arrivalCity }}.
     
     state: Departure
         a: Назовите, пожалуйста, город отправления.
@@ -26,6 +30,7 @@ theme: /City
             script:
                 $session.arrivalCity = $parseTree._city;
             a: Итак, город прибытия: {{ $session.arrivalCity.name }}.
+            go!: /Weather/CurrentWeather
                 
     state: localCatchAll
         q: * || fromState = /City/Departure
