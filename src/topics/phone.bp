@@ -1,0 +1,11 @@
+{
+  "positions" : [ {
+    "id" : "/Phone/Ask",
+    "x" : 1380,
+    "y" : 1052
+  }, {
+    "id" : "/Phone/Confirm",
+    "x" : 1000,
+    "y" : 518
+  } ]
+}

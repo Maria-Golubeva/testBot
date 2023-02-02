@@ -1,0 +1,19 @@
+{
+  "positions" : [ {
+    "id" : "/City/TicketPurchase",
+    "x" : 240,
+    "y" : 2413
+  }, {
+    "id" : "/City/Departure",
+    "x" : 1760,
+    "y" : 508
+  }, {
+    "id" : "/City/Arrival",
+    "x" : 2140,
+    "y" : 732
+  }, {
+    "id" : "/City/localCatchAll",
+    "x" : 2140,
+    "y" : 285
+  } ]
+}

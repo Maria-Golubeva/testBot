@@ -8,6 +8,8 @@ language: ru
 tests:
   include:
     - test.xml
+#   exclude:
+#     - test.xml
 
 sts:
     noMatchThreshold: 0.2
