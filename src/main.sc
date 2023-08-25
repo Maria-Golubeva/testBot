@@ -51,6 +51,7 @@ theme: /
     
     state: test
         q!: test
+        a: test
         inlineButtons:
             {text:"Подписаться", callback_data: "Подписаться"}
         
