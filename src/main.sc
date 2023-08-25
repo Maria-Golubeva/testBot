@@ -52,7 +52,7 @@ theme: /
     state: test
         q!: test
         inlineButtons:
-            {text:"Подписаться на обновления", callback_data: "Подписаться"}
+            {text:"Подписаться", callback_data: "Подписаться"}
         
     state: NoMatch || noContext = true
         event!: noMatch
