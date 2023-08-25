@@ -2,18 +2,24 @@
   "project" : {
     "id" : "test_bot-1000069725-EtR",
     "name" : "test_bot-1000069725-EtR",
-    "folder" : "/jaicp"
+    "folder" : "/platform"
   },
   "settings" : {
     "language" : "ru",
-    "spellingCorrection" : false,
+    "spellingCorrection" : true,
     "classificationAlgorithm" : "sts",
     "timezone" : "Europe/Moscow",
     "extendedSettings" : {
       "tokenizerEngine" : "mystem",
       "useShared" : false
     },
-    "shared" : false
+    "shared" : false,
+    "validation" : {
+      "phraseValidationEnabled" : false,
+      "answerValidationEnabled" : false,
+      "phraseValidationThreshold" : 0.5,
+      "answerValidationThreshold" : 0.8
+    }
   },
   "intents" : [ {
     "path" : "/TicketPurchase",
@@ -98,7 +104,10 @@
     } ]
   } ],
   "enabledSystemEntities" : [ "mystem.geo", "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
-  "spellerDictionary" : [ ],
+  "spellerDictionary" : [ {
+    "word" : "билет",
+    "frequency" : 1
+  } ],
   "systemEntities" : [ {
     "name" : "mystem.geo",
     "enabled" : true
@@ -202,5 +211,6 @@
     "name" : "zb.number",
     "enabled" : false
   } ],
-  "faq" : [ ]
+  "faq" : [ ],
+  "skills" : [ ]
 }

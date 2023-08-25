@@ -48,6 +48,11 @@ theme: /
             a: Приветствую!
         a: Меня зовут {{ capitalize($injector.botName) }}.
         go!: /Service/SuggestHelp
+    
+    state: test
+        q!: test
+        inlineButtons:
+            {text:"Подписаться на обновления", callback_data: "Подписаться"}
         
     state: NoMatch || noContext = true
         event!: noMatch
