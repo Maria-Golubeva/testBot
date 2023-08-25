@@ -53,7 +53,14 @@ theme: /
         q!: test
         a: test
         inlineButtons:
-            {text:"Подписаться", callback_data: "Подписаться"}
+            {text:"Подписаться wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "Подписаться"}
+    
+    state:: test2
+        q!: test2
+        a: test2
+        buttons:
+            "Да tyfdfdgdasgfkjgsakjfgsdkhjfgksdgf"
+            "Нет sdghfjkhdgfjksgfkjgsdkjhg"
         
     state: NoMatch || noContext = true
         event!: noMatch
