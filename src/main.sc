@@ -47,7 +47,7 @@ theme: /
             a: Здравствуйте!
             a: Приветствую!
         a: Меня зовут {{ capitalize($injector.botName) }}.
-        go!: /Service/SuggestHelp
+        # go!: /Service/SuggestHelp
     
     state: test
         q!: test
