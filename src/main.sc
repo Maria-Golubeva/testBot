@@ -54,6 +54,11 @@ theme: /
         a: test
         inlineButtons:
             {text:"Подписаться wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "Подписаться"}
+            {text:"паправдлрпвалпр wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "пппп"}
+            {text:"смивмвамва wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "сссс"}
+            {text:"тпртертптпапа wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "тттт"}
+            {text:"фывывфувувув wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "ффффф"}
+            {text:"бобобоннобно wjgfxcgjbvcvbnjmbvjkjhnbnm", callback_data: "ббббб"}
     
     state:: test2
         q!: test2
